@@ -22,7 +22,7 @@ def save_data(filename, data):
 
 @app.route('/')
 def my_page():
-    current_user_id = 'metarama'
+    current_user_id = 'hyewon'
     year, month = 2025, 9
     today_str = f'{year}-{month:02d}-16'
 
@@ -79,7 +79,7 @@ def project_detail(project_code):
 
 @app.route('/add_schedule', methods=['POST'])
 def add_schedule():
-    current_user_id, today_str = 'metarama', '2025-09-16'
+    current_user_id, today_str = 'hyewon', '2025-09-16'
     new_item = request.json
     all_schedules = load_data('schedules.json')
     
@@ -102,12 +102,12 @@ def update_report():
     report_id = data.get('reportId')
     target_date = data.get('date')
     tasks_text = data.get('tasks', '')
-    current_user_id = 'metarama'
+    current_user_id = 'hyewon'
 
     all_reports = load_data('daily_reports.json')
     report_found = False
     
-    lines = tasks_text.strip().split('\\n')
+    lines = tasks_text.strip().split('\n')
 
     new_tasks = []
     for line in lines:
